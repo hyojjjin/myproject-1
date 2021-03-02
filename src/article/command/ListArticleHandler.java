@@ -25,7 +25,6 @@ public class ListArticleHandler implements CommandHandler{
 		ArticlePage articlePage = listService.articlePage(pageNo);
 		req.setAttribute("articlePage", articlePage);
 		
-		
 		//파라미터로 페이지 번호를 받아서
 		//int 타입으로 변환해주고
 		//서비스에 일을 시켜서 페이지 정보를 받아서

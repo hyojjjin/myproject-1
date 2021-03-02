@@ -47,7 +47,7 @@ SELECT * FROM article_content_p;
 DROP TABLE article_content_p;
 CREATE TABLE article_content_p (
                 article_no NUMBER PRIMARY KEY,
-                content VARCHAR(4000)
+                content VARCHAR2(4000)
                 );
                 
                 

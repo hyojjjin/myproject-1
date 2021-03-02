@@ -36,10 +36,16 @@ public class JDBCInitListener implements ServletContextListener {
     //	ServletContext application = sce.getServletContext();
     	//sce 이건 또 뭐지
     	
+    	//context root 경로
+    	ServletContext application = sce.getServletContext();
     	
-    	String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-    	String user = "c##mydbms";
-    	String pw = "admin";
+    	String url = application.getInitParameter("jdbcUrl");
+    	String user = application.getInitParameter("jdbcUser");
+    	String pw = application.getInitParameter("jdbcPassword");
+    	
+    	//String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+    	//String user = "c##mydbms";
+    	//String pw = "admin";
     	
     	try {
     			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -57,9 +63,6 @@ public class JDBCInitListener implements ServletContextListener {
     	ConnectionProvider.setUser(user);
     	ConnectionProvider.setPassword(pw);
     	
-    	
-    	//context root 경로
-    	ServletContext application = sce.getServletContext();
     	
     	String contextPath = application.getContextPath();
     	application.setAttribute("root", contextPath);

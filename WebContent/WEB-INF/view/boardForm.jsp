@@ -63,11 +63,13 @@
 				</tbody>
 
 			</table>
+			
+			<c:if test = "${not empty sessionScope.authUser}">
 			<a href="${root }/write.do">
 				<button type="submit" class="btn"
 					style="background-color: #0b5394ff; color: white">글쓰기</button>
-
 			</a>
+			</c:if>
 		</div>
 	</div>
 
